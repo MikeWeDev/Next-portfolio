@@ -1,106 +1,89 @@
-import Image from 'next/image'
-function Projects() {
+import Image from 'next/image';
+
+const projects = [
+  {
+    title: 'E-Commerce',
+    desc: `A full-featured React + Tailwind e-commerce site with product catalog, cart, and checkout.`,
+    img: '/coloshop-free-bootstrap-ecommerce-website-templates.jpg',
+    liveUrl: 'https://mike-ecommerce-web.netlify.app/',
+    tech: ['React', 'JS', 'Tailwind', 'CSS'],
+  },
+  {
+    title: 'Real Estate',
+    desc: `A modern real-estate showcase built with React, Tailwind & vanilla JS for dynamic listings.`,
+    img: '/royalestate-free-real-estate-website-templates.jpg',
+    liveUrl: 'https://mike-realstate-app.netlify.app/',
+    tech: ['React', 'JS', 'Tailwind', 'CSS'],
+  },
+  // ...add more projects here
+];
+
+export default function Projects() {
   return (
-    <div className='bg-[#172A3A]'>
-    <div id="project" className='flex  flex-col items-center md:h-[190vh] h-[300vh]  p-5'   data-aos="zoom-in" 
-    data-aos-duration="800" data-aos-delay="400">
-      <h1 className='text-[12px] text-white uppercase py-5'
-      >lates projects</h1>
-      <h2 className='py-8 md:text-[30px] text-[23px]  text-white'
-       >MY BEST <span className="text-yellow-400">PROJECT</span> </h2>
-   
-      <div className="flex flex-col justify-between w-[95%]  h-[80%] gap-7  ">
-      
-        {pictures.map((items,index)=>(
-         <div className="flex md:flex-row flex-col  w-[100%] h-full justify-between items-center 
-         md:border-b-[4px] md:border-b-white border-white p-2 gap-5 " key={index}>
+    <section id="project" className="bg-[#172A3A] py-16">
+      <div className="container mx-auto px-4">
+        <h2 className="text-white uppercase text-sm tracking-wider mb-2 text-center">
+          Latest Projects
+        </h2>
+        <h3 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+          My <span className="text-yellow-400">Best</span> Projects
+        </h3>
 
-         <div className="md:w-[50%] md:h-full w-[95%] h-[50%]    relative
-          rounded-lg  p-0 m-0 border-[2px] border-red-500 flex justify-center items-center">
-         
-           <div className=" w-[100%] bg-[#12f7ff] p-5 z-10 md:hover:z-30 text-black  h-[100%] flex justify-center
-            items-center flex-col rounded-lg">
-           <h1 className='text-black  md:text-[25px] text-[20px]'>{items.title}</h1>
-           <p className='text-black lg:text-[15px] md:text-[12px] text-[10px] mt-2 overflow-y-hidden '>
-           {items.desc}
-          </p>
-               <a href={items.links}  className='border-[3px] border-yellow-500 shadow-yellow-500 hover:shadow-2xl
-                 text-black font-bold   rounded-full  p-4 m-2 '>Link</a>
-             
-           </div>
-          
-         <div className="md:hover:z-0  z-20 ">
-          <a href={items.links}>
-          <Image
-         src={items.img}
-         alt='user'
-         objectFit='contain'
-         width="500"
-         height="250"
-         className='object-cover rounded-lg opacity-[1] md:hover:opacity-0
-          cursor-pointer w-[100%] h-[100%]  absolute left-0 right-0 top-0 bottom-0'
-         />
-          </a>
-        
-         </div>
-         
-        
-        
-         </div>
-         <div className="flex flex-col justify-between items-center md:w-[50%] w-[90%] md:h-[90%] h-[40%] ">
-          <h1 className='text-white  md:text-[25px] text-[20px]'>{items.title}</h1>
-          <p className='text-white lg:text-[15px] md:text-[12px] text-[10px] overflow-y-hidden opacity-[0.5]'>
-           {items.desc}
-          </p>
-          <div className="btns flex justify-between gap-3 w-full flex-wrap pt-2" >
-            <button className=' md:w-[20%] w-[40%] md:h-full h-1/2  bg-[#02A9EA] text-white md:p-1 p-0.5 rounded-md'>
-            {items.tech[0]}</button>
-            <button className=' md:w-[20%] w-[40%] md:h-full h-1/2 bg-white text-BLACK md:p-1 p-0.5 rounded-md'>
-             {items.tech[1]}</button>
-            <button className=' md:w-[20%] w-[40%] md:h-full h-1/2 bg-[#ED217C] text-white md:p-1 p-0.5 rounded-md'>
-             {items.tech[2]}</button>
-            <button className=' md:w-[20%] w-[40%] md:h-full h-1/2 bg-[#2541B2] text-white md:p-1 p-0.5 rounded-md'>
-             {items.tech[3]}</button>
-          </div>
-         </div>
-       </div>
-        ))}
-      
-       
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p, idx) => (
+            <div
+              key={idx}
+              className="relative rounded-xl overflow-hidden shadow-lg group bg-gray-800"
+            >
+              {/* Project image */}
+              <div className="relative w-full h-60">
+                <Image
+                  src={p.img}
+                  alt={p.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Hover overlay */}
+                <a
+                  href={p.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold text-lg transition-opacity"
+                >
+                  View Live Demo
+                </a>
+              </div>
+
+              {/* Card content */}
+              <div className="p-6">
+                <h4 className="text-xl font-semibold text-white mb-2">
+                  {p.title}
+                </h4>
+                <p className="text-gray-300 text-sm mb-4">{p.desc}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {p.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="bg-yellow-400 text-black text-xs font-medium px-2 py-1 rounded"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={p.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-yellow-400 text-black font-semibold rounded hover:bg-yellow-300 transition"
+                >
+                  🚀 View Project
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-    </div>
-  
-  )
+    </section>
+  );
 }
-
-export default Projects
- const pictures = [
-  {
-     title:"E-COMMERCE",
-      desc:`This is an e-commerce website that is made by REACT.JS with  | tailwind css and | vanilla js
-   that has all necessary functionality that most e-commerce website has on there user interface.`,
-   img:"/coloshop-free-bootstrap-ecommerce-website-templates.jpg",
-    links:"https://mike-ecommerce-web.netlify.app/",
-    tech:["React","JS","Tailwind","css"]
-  },
-  {
-    title:"REAL-STATE",
-    img:"/royalestate-free-real-estate-website-templates.jpg" ,
-    desc:`This is a real-state website that give all neccessary information about the campany and it is built by 
-     REACT.JS with  | tailwind css and | vanilla js `,
-     links:"https://mike-realstate-app.netlify.app/",
-      tech:["React","js","Tailwind","css"]
-
-  },
-  {
-    title:"REAL-STATE",
-    img:"/royalestate-free-real-estate-website-templates.jpg" ,
-    desc:`This is a real-state website that give all neccessary information about the campany and it is built by 
-     REACT.JS with  | tailwind css and | vanilla js `,
-     links:"https://mike-realstate-app.netlify.app/",
-      tech:["React","js","Tailwind","css"]
-
-  }
- 
- ]

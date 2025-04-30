@@ -1,15 +1,16 @@
 'use client'
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Hero from './Component/Hero/Hero'
 import About from './Component/About';
 import Skills from './Component/Skills';
 import Services from './Component/Services'
 import Projects from './Component/Projects';
-import Contact from './Component/Contact/Contact'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import Contact2 from './Component/Contact/index'
 import NavCol from './NavCol';
+//import expriance from './Component/expriance/expriance';
+
 export default function Render() {
  useEffect(()=>{
     AOS.init({
@@ -25,6 +26,7 @@ export default function Render() {
     <NavCol />
     <Hero />
     <About />
+  {/*  <expriance /> */} 
     <Skills />
     <Services />
     <Projects />

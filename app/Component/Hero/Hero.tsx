@@ -16,14 +16,14 @@ function Hero() {
   const whatsapplink="https://wa.me/qr/3GK62EOD3WVQE1"
 
   return (
-    <div  /* style={{background:"url(/images/banner.jpg)"}} */ >
+    <div  className="bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364] animate-gradient-x min-h-screen flex items-center justify-center" >
   <div id="hero "   data-aos="zoom-in"  data-aos-duration="1000" data-aos-delay="400"
-     className=" bg-cover bg-white overflow-hidden mt-[12vh] bg-center h-[145vh] lg:h-[88vh] flex justify-center items-center">
-       {/*- <Particle   />-*/} 
+     className="overflow-hidden mt-[12vh] bg-center h-[145vh] lg:h-[88vh] flex justify-center items-center">
+        <Particle   />
      <div className="con mt-10 flex lg:flex-row flex-col justify-center
      w-[95%] items-center h-[90%] lg:h-auto gap-3 ">
       
-      <div className="ml-[20px] lg:ml-2  text-black
+      <div className="ml-[20px] lg:ml-2  text-white
        flex flex-col flex-1  gap-y-5  " >
         <h1 className='text-bold text-[40px] font-serif ' >HY , I AM
          <span className='text-[#3e64ff]' > MIKE</span></h1>
@@ -31,7 +31,7 @@ function Hero() {
         <ExampleComponent />
           </h2>
       
-        <p className='text-[11px] lg:text-[15px] font-bold  font-serif  text-black'>
+        <p className='text-[11px] lg:text-[15px] font-bold  font-serif  text-white'>
                 Passionate Front-end Web Devloper and 4th Year Cs Student at Aau . I specialize in utilizing the following tech stacks:
                Next.js | React.js | Typescript | Tailiwind css And Jest For Testing . Transforming Ideas Into 
                Seamless Web Expriance.

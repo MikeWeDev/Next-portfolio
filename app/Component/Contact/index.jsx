@@ -1,109 +1,63 @@
-'use client'
-import Image from 'next/image'
-import './contact2.scss'
-import  { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+'use client';
+import React from 'react';
+import {
+  faTelegram,
+  faLinkedin,
+  faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTelegram, faFacebook, faWhatsapp, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-function Contact2(){
-  const telegramUserName = '@Mikyyetklyelij';
-  const linkdinUserName = 'https://www.linkedin.com/in/mikyas-negash-01b400263';
-  const whatsapplink="https://wa.me/qr/3GK62EOD3WVQE1"
-  const telegramLink = `https://t.me/${telegramUserName}`;
+const EMAIL = 'youremail@example.com'; // ← replace with your email
+const telegramUserName = 'Mikyyetklyelij';
+const telegramLink = `https://t.me/${telegramUserName}`;
+const linkedinLink = 'https://www.linkedin.com/in/mikyas-negash-01b400263';
+const whatsappLink = 'https://wa.me/qr/3GK62EOD3WVQE1';
 
+export default function Contact2() {
+  return (
+    <section
+      id="contact"
+      className="py-16 bg-gray-900 text-gray-100 flex flex-col items-center"
+    >
+      <h2 className="text-4xl font-bold mb-4 tracking-wider">GET IN TOUCH</h2>
+      <p className="text-center max-w-xl mb-8 px-4">
+        Click the button below to send me an email directly, or connect via social
+        media.
+      </p>
 
-  const letters = ['S', 'A', 'Y', '-', 'H', 'Y']
-  const form = useRef();
- 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm('service_uk7hzdl', 'template_0fnzi45', form.current, {
-        publicKey: 're8UOJpBf_mKVPA23',
-  
-      })
-      .then(
-        () => {
-          alert('SUCCESSFULLY SENT!');
-          form.current.reset();
-        },
-        (error) => {
-          alert('FAILED...', error.text);
-        }
-      );
-  };
+      <a
+        href={`mailto:${EMAIL}`}
+        className="mb-12 px-8 py-4 bg-blue-600 hover:bg-blue-500 transition rounded-full text-lg font-semibold shadow-lg"
+      >
+        ✉️ Email Me
+      </a>
 
-    return<>
-    <div className="flex justify-center items-center flex-col" id='contact'>
-    <h1 className="heading text-black"
+      <div className="flex space-x-8">
+        <a
+          href={telegramLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-4 bg-[#0088CC] rounded-full hover:scale-110 transform transition"
         >
-          {letters.map((i, index) => {
-            return (
-              <span key={index}  className="father">
-                {i}
-              </span>
-            );
-          })}
-        </h1>
-        <p className="paragraph text-black">
-          IF YOU WANT TO CONTACT ME. PLEASE USE THE FOLLOWING ADDRESSES
-        </p>
-    </div>
-   
-    <div className="flex justify-center items-center w-[100vw] h-[85vh] md:h-[100vh] md:mb-5 ">
-   
-    <div className=" flex justify-center mt-10 md:mt-0   md:flex-row  items-start md:items-center w-[90%] h-[100%] md:gap-x-5 ">
-       
-         <div className="relative w-full h-[90%] flex-1  hidden md:block ">
-          <Image
-           src="/photo_2024-08-25_15-36-15.jpg"
-           alt="user"
-           layout="fill"
-           className="absolute top-0 bottom-0 right-0 left-0  "
-          />
-          </div>
-
-          <div className="md:flex-1 w-[90%]  md:h-[80%]  h-[60%]  ">
-             
-             <form action=""  ref={form} onSubmit={sendEmail} className="w-full flex flex-col gap-2 ">
-               <div className=" w-full border border-black">
-                 <input type="text" className=" w-full  p-2" placeholder="Your Name" />
-               </div>
-               <div className=" w-full border-black border">
-                 <input type="text" className="w-full  p-2" placeholder="Your Email" required />
-               </div>
-               <div className=" w-full border border-black">
-                 <input type="text" className="w-full p-2" placeholder="Subject"  />
-               </div>
-               <div className=" w-full border border-black ">
-                 <textarea name="" id="" cols="  w-full m-2 p-2" rows="7" className="w-full p-2" placeholder="Message"></textarea>
-               </div>
-              
-               <div className=" w-full">
-                 <input type="submit" value="Send Message" className="btn m-2 bg-blue-500 hover:scale-95 hover:cursor-pointer text-white rounded-md py-3 px-5" />
-               </div>
-               <div className="social-link" >
-              <a href={telegramLink} className="social">
-                <FontAwesomeIcon className="linkt" icon={faTelegram} color="#" />
-              </a >
-              <a href={linkdinUserName} className="social" >
-                <FontAwesomeIcon className="linkf" icon={faLinkedin} color="#"/>
-              </a>
-              <a href={whatsapplink} className="social">
-                <FontAwesomeIcon className="linkv" icon={faWhatsapp}color="#"/>
-              </a>
-            </div>
-             </form>
-           
-           
-           </div>
-
-        </div>
-    </div>
-      
-    </>
-      
+          <FontAwesomeIcon icon={faTelegram} size="2x" className="text-white" />
+        </a>
+        <a
+          href={linkedinLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-4 bg-[#0A66C2] rounded-full hover:scale-110 transform transition"
+        >
+          <FontAwesomeIcon icon={faLinkedin} size="2x" className="text-white" />
+        </a>
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-4 bg-[#25D366] rounded-full hover:scale-110 transform transition"
+        >
+          <FontAwesomeIcon icon={faWhatsapp} size="2x" className="text-white" />
+        </a>
+      </div>
+    </section>
+  );
 }
-
-export default Contact2

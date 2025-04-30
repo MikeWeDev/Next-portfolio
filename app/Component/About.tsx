@@ -43,7 +43,7 @@ function About() {
         <div className="lg:w-[300px] lg:h-[300px] lg:mx-[2rem]
          lg:mt-2  w-[250px] h-[250px] relative ">
         <Image 
-        src='/images/about.jpg'
+        src='/Cropped_20241022_094725.jpg'
         alt='user'
         layout='fill'
         objectFit='contain'
