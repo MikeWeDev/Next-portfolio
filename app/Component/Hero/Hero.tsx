@@ -30,12 +30,12 @@ function Hero() {
           {/* Left Section */}
           <div className="text-white flex flex-col flex-1 gap-y-6 px-4 lg:px-10 py-6">
             {/* Name and Title */}
-            <h1 className="font-serif font-extrabold text-2xl lg:text-3xl leading-snug tracking-tight text-center sm:text-left">
+            <h1 className="font-serif font-extrabold text-4xl leading-snug tracking-tight text-center sm:text-left">
               Hi, I AM <span className="text-[#60a5fa]">MIKIYAS</span>
             </h1>
 
             {/* Typing Component */}
-            <div className="text-lg lg:text-xl font-medium text-gray-300 animate-pulse text-center sm:text-left">
+            <div className="text-xl lg:text-2xl font-medium text-gray-300 animate-pulse text-center sm:text-left">
               <ExampleComponent />
             </div>
 
