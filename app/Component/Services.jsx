@@ -4,8 +4,8 @@ import { RiNextjsFill } from "react-icons/ri";
 import { SiJest } from "react-icons/si";
 function Services() {
   return (
-    <div className='bg-[#0e1538]'>
-    <div id="service" className="flex justify-center items-center flex-col  lg:h-[120vh] h-[220vh] pb-5 "
+    <div className='bg-[#0e1538] '>
+    <div id="service" className="flex justify-center items-center flex-col  lg:h-[120vh] h-[220vh] pb-5  "
     data-aos="zoom-in"   data-aos-duration="700" data-aos-delay="400">
         <h1 className="text-[#55e6a5]   text-[35px] font-bold pb-5"
        >Services</h1>
@@ -52,22 +52,18 @@ const data=[
   {
     title:"React.js dev",
     icons:< FaReact color="#5ED4F4" />,
-    discription:`AS a react.js dev i will give all the advatage react.js gives like efficency,simplcity and a good documentation with 
-    reusable components for later use.`,
-    button:"reacd more"
+    discription:`AS a react.js dev i will give all the advatage react.js gives like efficency,simplcity and a good documentation with`
   },
   {
     title:"Next.js dev",
     icons:<RiNextjsFill  color='#00000' />,
-    discription:`AS a Next.js dev i will give all new feature next.js come with which is optimazing performance by diffrent ways 
-    also helps to better SEO optimezation ` ,
+    discription:`AS a Next.js dev i will give all new feature next.js come with which is optimazing performance by diffrent ways`,
     button:"reacd more"
   },
   {
     title:"Test With Jest",
     icons:<SiJest />,
-    discription:`As a jest tester i will make sure the code that is written i react or next doesn't have a bugs or even if that
-    code is written in a way to perform better`,
+    discription:`As a jest tester i will make sure the code that is written i react or next doesn't have a bugs or even if that`,
     button:"reacd more"
   }
 ];

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
 const NUM_PARTICLES = 50;
@@ -13,11 +13,10 @@ const generateParticle = () => ({
 });
 
 const SimpleParticles: React.FC<{ className?: string }> = ({ className }) => {
-  const [particles, setParticles] = useState<any[]>([]);
-
-  useEffect(() => {
-    setParticles(Array.from({ length: NUM_PARTICLES }, generateParticle));
-  }, []);
+  const particles = useMemo(
+    () => Array.from({ length: NUM_PARTICLES }, generateParticle),
+    []
+  );
 
   return (
     <div className={twMerge("absolute inset-0 overflow-hidden z-0", className)}>
@@ -40,4 +39,4 @@ const SimpleParticles: React.FC<{ className?: string }> = ({ className }) => {
   );
 };
 
-export default SimpleParticles;
+export default React.memo(SimpleParticles); // ⬅️ Prevents re-render unless props change

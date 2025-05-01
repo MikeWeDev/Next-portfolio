@@ -12,6 +12,7 @@ const telegramUserName = 'Mikyyetklyelij';
 const telegramLink = `https://t.me/${telegramUserName}`;
 const linkedinLink = 'https://www.linkedin.com/in/mikyas-negash-01b400263';
 const whatsappLink = 'https://wa.me/qr/3GK62EOD3WVQE1';
+const email='mikyasnegash2@gmail.com'
 
 export default function Contact2() {
   return (
@@ -26,11 +27,14 @@ export default function Contact2() {
       </p>
 
       <a
-        href={`mailto:${EMAIL}`}
-        className="mb-12 px-8 py-4 bg-blue-600 hover:bg-blue-500 transition rounded-full text-lg font-semibold shadow-lg"
-      >
-        ✉️ Email Me
-      </a>
+  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Hello&body=Hi%20Mikyas%2C%20I%20would%20like%20to%20connect%20with%20you.`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mb-12 px-8 py-4 bg-blue-600 hover:bg-blue-500 transition rounded-full text-lg font-semibold shadow-lg"
+>
+  ✉️ Email Me
+</a>
+
 
       <div className="flex space-x-8">
         <a
