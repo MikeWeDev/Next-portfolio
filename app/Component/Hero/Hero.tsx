@@ -4,7 +4,12 @@ import SimpleParticles from './Particle';
 import ExampleComponent from '../TextEffect';
 import { Link } from 'react-scroll';
 import { MdFileDownload } from 'react-icons/md';
-import { FaLinkedin, FaGithub, FaTelegramPlane, FaWhatsappSquare } from 'react-icons/fa';
+import {
+  FaLinkedin,
+  FaGithub,
+  FaTelegramPlane,
+  FaWhatsappSquare
+} from 'react-icons/fa';
 
 function Hero() {
   const telegramUserName = 'Mikyyetklyelij';
@@ -14,117 +19,116 @@ function Hero() {
   const whatsappLink = 'https://wa.me/qr/3GK62EOD3WVQE1';
 
   return (
-    <div className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] animate-gradient-x min-h-screen flex items-center justify-center text-white font-sans">
+    <section className="relative bg-[#0a0f26] min-h-screen mt-10 flex items-center justify-center overflow-hidden text-white">
+      {/* Particle Background */}
+      <div className="absolute inset-0 z-0">
+        <SimpleParticles />
+      </div>
+
+      {/* Content Container */}
       <div
         id="hero"
+        className="relative z-10 w-[90%] px-6 py-16 flex flex-col lg:flex-row items-center gap-12"
         data-aos="zoom-in"
         data-aos-duration="1000"
         data-aos-delay="400"
-        className="relative overflow-hidden mt-12 sm:mt-16 w-full min-h-[100vh] sm:h-[145vh] lg:h-[88vh] flex justify-center items-center py-8 sm:py-12 lg:py-10"
       >
-        <div className="absolute inset-0 -z-10">
-          <SimpleParticles />
-        </div>
+        {/* Left: Text */}
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+          <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight">
+            Hi, I’m <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">Mikiyas</span>
+          </h1>
 
-        <div className="flex flex-col lg:flex-row justify-center items-center w-full h-full gap-8 z-10 px-4 sm:px-8 lg:px-16">
-          {/* Left Section */}
-          <div className="text-white flex flex-col flex-1 gap-y-6 px-4 lg:px-10 py-6">
-            {/* Name and Title */}
-            <h1 className="font-serif font-extrabold text-4xl leading-snug tracking-tight text-center sm:text-left">
-              Hi, I AM <span className="text-[#60a5fa]">MIKIYAS</span>
-            </h1>
-
-            {/* Typing Component */}
-            <div className="text-xl lg:text-2xl font-medium text-gray-300 animate-pulse text-center sm:text-left">
-              <ExampleComponent />
-            </div>
-
-            {/* Bio Description */}
-            <p className="text-sm lg:text-base text-gray-300 max-w-2xl backdrop-blur-sm bg-white/5 p-3 rounded-lg shadow-md mx-auto sm:mx-0">
-              Passionate <span className="text-[#60a5fa] font-semibold">Front-end Web Developer</span> and
-              <span className="text-[#60a5fa] font-semibold"> 4th Year CS Student at AAU</span>. I specialize in
-              <span className="text-[#60a5fa] font-semibold"> Next.js</span>,
-              <span className="text-[#60a5fa] font-semibold"> React.js</span>,
-              <span className="text-[#60a5fa] font-semibold"> TypeScript</span>,
-              <span className="text-[#60a5fa] font-semibold"> Tailwind CSS</span>, and
-              <span className="text-[#60a5fa] font-semibold"> Jest</span>. Turning ideas into elegant web experiences.
-            </p>
-
-            {/* Action Buttons */}
-            <div className="flex gap-4 mt-3 justify-center w-full">
-              <a
-                href="/updated-cv.pdf"
-                download
-                className="flex items-center justify-center w-full sm:w-auto gap-2 px-5 py-2.5 text-sm sm:text-base font-semibold uppercase bg-[#60a5fa] text-white rounded-lg hover:bg-transparent border-2 border-[#60a5fa] hover:text-[#60a5fa] transition-all duration-300"
-              >
-                <MdFileDownload size={18} />
-                Download CV
-              </a>
-
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                className="cursor-pointer flex items-center justify-center w-full sm:w-auto px-5 py-2.5 text-sm sm:text-base font-semibold uppercase border-2 border-[#60a5fa] text-white hover:bg-[#60a5fa] hover:text-white rounded-lg transition-all duration-300"
-              >
-                Contact Me
-              </Link>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex gap-5 mt-5 justify-start">
-              <a
-                href={linkedinLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn"
-                className="text-[#0A66C2] hover:scale-110 transition-transform duration-200 rounded-full border-2 border-[#0A66C2] p-2"
-              >
-                <FaLinkedin size={26} />
-              </a>
-              <a
-                href={githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="GitHub"
-                className="text-[#f59e0b] hover:scale-110 transition-transform duration-200 rounded-full border-2 border-[#f59e0b] p-2"
-              >
-                <FaGithub size={26} />
-              </a>
-              <a
-                href={telegramLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Telegram"
-                className="text-[#0088CC] hover:scale-110 transition-transform duration-200 rounded-full border-2 border-[#0088CC] p-2"
-              >
-                <FaTelegramPlane size={26} />
-              </a>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="WhatsApp"
-                className="text-[#25D366] hover:scale-110 transition-transform duration-200 rounded-full border-2 border-[#25D366] p-2"
-              >
-                <FaWhatsappSquare size={26} />
-              </a>
-            </div>
+          <div className="text-2xl font-medium text-gray-300 animate-pulse">
+            <ExampleComponent />
           </div>
 
-          {/* Right Section - Image */}
-          <div className="flex-1 relative lg:h-[80vh] h-[60vh] lg:w-[50vw] w-[70vw] mb-6 sm:mb-0">
+          <p className="text-base sm:text-lg text-gray-300 max-w-lg bg-white/5 backdrop-blur-sm p-4 rounded-2xl shadow-lg">
+            Passionate <span className="text-indigo-400 font-semibold">Front-end Web Developer</span> &amp; 
+            <span className="text-indigo-400 font-semibold"> 4th Year CS Student</span> specializing in 
+            <span className="text-indigo-400 font-semibold"> Next.js</span>, 
+            <span className="text-indigo-400 font-semibold"> React.js</span>, 
+            <span className="text-indigo-400 font-semibold"> TypeScript</span>, 
+            <span className="text-indigo-400 font-semibold"> Tailwind CSS</span> &amp; 
+            <span className="text-indigo-400 font-semibold"> Jest</span>.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <a
+              href="/updated-cv.pdf"
+              download
+              className="flex items-center gap-2 px-6 py-3 font-semibold uppercase bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl hover:opacity-90 transition"
+            >
+              <MdFileDownload size={20} />
+              Download CV
+            </a>
+            <Link
+              to="contact"
+              smooth
+              spy
+              className="flex items-center justify-center px-6 py-3 font-semibold uppercase border-2 border-indigo-500 rounded-xl hover:bg-indigo-500 hover:text-white transition"
+            >
+              Contact Me
+            </Link>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex gap-4 mt-6">
+            <a
+              href={linkedinLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              className="p-2 border-2 border-[#0A66C2] rounded-full hover:scale-110 transition"
+            >
+              <FaLinkedin size={24} className="text-[#0A66C2]" />
+            </a>
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+              className="p-2 border-2 border-[#f59e0b] rounded-full hover:scale-110 transition"
+            >
+              <FaGithub size={24} className="text-[#f59e0b]" />
+            </a>
+            <a
+              href={telegramLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Telegram"
+              className="p-2 border-2 border-[#0088CC] rounded-full hover:scale-110 transition"
+            >
+              <FaTelegramPlane size={24} className="text-[#0088CC]" />
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="WhatsApp"
+              className="p-2 border-2 border-[#25D366] rounded-full hover:scale-110 transition"
+            >
+              <FaWhatsappSquare size={24} className="text-[#25D366]" />
+            </a>
+          </div>
+        </div>
+
+        {/* Right: Hero Image */}
+        <div className="flex-1 flex justify-center items-center">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 hover:scale-105 transition-transform duration-700">
             <Image
               src="/home-right.png"
-              alt="Mike's Profile"
+              alt="Mikiyas Profile"
               layout="fill"
-              className="rounded-full object-cover shadow-lg"
+              objectFit="cover"
+              className="rounded-3xl shadow-2xl"
               priority
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
